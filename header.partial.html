@@ -1,0 +1,59 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="https://www.celpip.ca/" target="_blank">
+      <img src="img/logo.png"
+    /></a>
+
+    <div class="brand" style="margin-top: 15px">Study Materials</div>
+
+    <ul class="nav" style="margin-top: 8px">
+      <li class="dropdown">
+        <a
+          class="dropdown-toggle"
+          data-toggle="dropdown"
+          style="margin-top: 10px"
+        >
+          Selected Product:
+          <span id="selected-product">Select Product</span>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="/InstructionalProducts/FreeOnlineSampleTest/FOST"
+              >Free CELPIP-General Practice Tests (Starter Set)</a
+            >
+          </li>
+          <li>
+            <a href="/InstructionalProducts/FreeOnlineSampleTest/FOST2"
+              >Free CELPIP-General LS Practice Tests (Starter Set)</a
+            >
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <div style="margin-left: 19px">
+          <ul class="nav nav-pills header-buttons"></ul>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="nav pull-right" style="margin-top: 17px">
+      <form
+        returnurl=""
+        action="/InstructionalProducts/Account/Authenticate"
+        method="post"
+      >
+        <li class="loginButton">
+          <img src="img/fa_cog.png" style="width: 18px; height: 18px" />
+          <input
+            type="submit"
+            class="btn btn-link"
+            id="sign-in-link"
+            value="SIGN IN"
+          />
+        </li>
+      </form>
+    </ul>
+  </div>
+</div>
