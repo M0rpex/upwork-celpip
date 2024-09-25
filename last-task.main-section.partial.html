@@ -3,16 +3,15 @@
   <div id="panelTop">
     <div
       id="canvasName"
-      style="float: left; font-size: 16px; font-weight: bold"
     >
       Practice Test A - Speaking Task 6: Dealing with a Difficult Situation
     </div>
 
-    <div style="float: right" class="btnNext span1 pull-right">
+    <div class="btnNext span1 pull-right fl-r">
       <a href="#" id="btnNext" class="btn btn-primary">NEXT</a>
     </div>
 
-    <div style="float: right; display: block" id="timer" class="hide">
+    <div id="timer" class="d-block fl-r">
       Preparation:
       <strong style="color: rgb(0, 0, 0)">60 seconds</strong> Recording:
       <strong style="color: rgb(0, 0, 0)">60 seconds</strong>
@@ -27,7 +26,7 @@
         does not agree, and says you will have to move out if she comes.
         <br /><br />
       </p>
-      <div style="font-size: 17px; line-height: 1.2em; margin-left: 25px">
+      <div class="index-main-task">
         Choose ONE:<br />
         EITHER<br />
         <strong
@@ -43,7 +42,7 @@
       <p></p>
       <br />
       <hr />
-      <div id="startPrepTime" class="box hide" style="display: block">
+      <div id="startPrepTime" class="box">
         <div class="boxIcon">
           <span class="recfeedback-value">
             <em class="clock-icon icon"></em>
@@ -52,11 +51,11 @@
         <div class="boxText">
           <p>Preparation Time</p>
 
-          <span id="progressTimer" style="color: #0056bf">30</span>
+          <span id="progressTimer" style="color: #0056bf">60</span>
         </div>
       </div>
 
-      <div id="startRecTime" class="box hide">
+      <div id="startRecTime" class="box hidenn">
         <div class="boxIcon">
           <span class="recfeedback-value">
             <em class="recfeedback-icon icon"></em>
@@ -67,7 +66,7 @@
 
           <div class="progressbar">
             <span class="progressbar-value">
-              <em style="left: 0%" class="progressbar-cover"></em>
+              <em style="left: 0%" id="progressBar" class="progressbar-cover"></em>
             </span>
           </div>
         </div>
@@ -78,4 +77,57 @@
       </div>
     </div>
   </div>
+  <script>
+    let amountTime = 60;
+    let proccess = 0;
+    const timeBox = document.getElementById("startPrepTime");
+    const recordigBox = document.getElementById("startRecTime");
+    let timerInterval;
+    let progressInterval;
+
+
+    function startRecording() {
+      timeBox.classList.add("hidenn");
+      recordigBox.classList.remove("hidenn");
+      progressInterval = setInterval(calculateRecord, 1000);
+    }
+
+    function calculateRecord() {
+      const progressBar = document.getElementById("progressBar");
+
+      proccess += 1.7;
+
+      if (proccess >= 100) {
+        clearInterval(progressInterval);
+        recordigBox.classList.add("hidenn");
+      }
+
+      progressBar.style.left = `${proccess}%`;
+    }
+
+    function calculateTime() {
+      const countdown = document.getElementById("progressTimer");
+
+      let seconds = amountTime % 60;
+
+      countdown.textContent = `${seconds}`;
+      amountTime--;
+
+      if (amountTime < 0) {
+        stopTimer();
+        amountTime = 0;
+      }
+
+      function stopTimer() {
+        clearInterval(timerInterval);
+        startRecording();
+      }
+    }
+
+    function startTimer() {
+      timerInterval = setInterval(calculateTime, 1000);
+    }
+
+    startTimer();
+  </script>
 </section>

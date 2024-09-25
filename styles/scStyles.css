@@ -75,6 +75,7 @@
 }
 
 .box {
+  display: block;
   border-radius: 10px;
   background-color: #d9dce1;
   margin: 10px auto;
@@ -477,6 +478,7 @@ p.speech:after {
 
 .pointerCurser {
   cursor: pointer;
+  height: 535px;
 }
 
 .speakingTwoBox {
@@ -545,4 +547,9 @@ ol.intro {
   width: auto;
   height: 60vh;
   max-height: 500px;
+}
+
+.hidenn {
+  display: none;
+  transition: display 1s ease-out;
 }

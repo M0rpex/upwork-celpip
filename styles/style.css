@@ -635,6 +635,7 @@
   
   #canvasName {
     font-family: "Fira Sans", "Century Gothic", "Times Roman", sans-serif;
+    float: left; font-size: 16px; font-weight: bold
   }
   
   h2 {
@@ -648,4 +649,10 @@
 .row {
   display: flex;
   justify-content: flex-end;
+}
+
+.index-main-task {
+  font-size: 17px; 
+  line-height: 1.2em; 
+  margin-left: 25px;
 }
